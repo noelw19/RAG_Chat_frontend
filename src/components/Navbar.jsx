@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getUser, logout } from "../utils/axios";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
+  const [path, setPath] = useState(null);
+  let page = useRef()
+
 
   useEffect(() => {
     async function checkLoggedIn() {
@@ -11,6 +14,10 @@ const Navbar = () => {
       setUser(user);
     }
     checkLoggedIn()
+    page.current = window.location.pathname;
+    console.log(page.current)
+    setPath(page.current)
+
   }, []);
 
     const handleLogout = async () => {
@@ -34,8 +41,8 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <Link to="/documents" className="mx-2">Documents</Link>
-            <Link to="/chat" className="mx-2">Chat</Link>
+            <Link to="/documents" className={`mx-2 ${path === "/documents" ? "bg-purp text-white hover:text-white cursor-default rounded-md p-2" : ""}`} onClick={() => {setPath("/documents")}}>Documents</Link>
+            <Link to="/chat" className={`mx-2 ${path === "/chat" ? "bg-purp text-white rounded-md p-2 hover:text-white cursor-default" : ""}`} onClick={() => {setPath("/chat")}}>Chat</Link>
             <button onClick={handleLogout} className="ml-4">Logout</button>
           </>
         )}

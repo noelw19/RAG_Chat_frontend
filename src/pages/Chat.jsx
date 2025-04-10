@@ -102,9 +102,9 @@ const Chat = () => {
                 <h2 className="text-xl font-semibold mb-4">Message Threads</h2>
                 <div className="space-y-2">
                     {threads.map((thread, index) => {
-                            console.log(selectedThread, index)
+                            console.log(selectedThread, index);
                         return (
-                            <div key={thread._id} className={`flex items-center justify-between bg-gray-50 p-3 rounded-md ${selectedThread === index ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-900"} hover:bg-blue-500 hover:text-white transition cursor-pointer`}
+                            <div key={thread._id} className={`flex items-center justify-between p-3 rounded-md ${selectedThread === index ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-900"} hover:bg-blue-500 hover:text-white transition cursor-pointer`}
                                 onClick={() => { setCurrentMessageId(thread._id); setSelectedThread(index) }}
                             >
                                 <div className="flex items-center">
@@ -115,7 +115,7 @@ const Chat = () => {
                                 </div>
                                 <button
                                     onClick={() => { }}
-                                    className="text-red-500 hover:text-red-700"
+                                    className={` ${selectedThread === index ? "text-white hover:text-red-500" : " text-red-500 hover:text-white"}`}
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />

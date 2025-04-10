@@ -1,4 +1,10 @@
-export const BASE_URL = "http://localhost:3000/api";
+
+//api.js
+const API_ENDPOINT = "https://ragapi.meliorus.co.nz/api"
+const DEV_API = "http://localhost:3000/api";
+console.log(API_ENDPOINT, import.meta.env)
+
+export const BASE_URL = !import.meta.PROD ? API_ENDPOINT : DEV_API;
 
 export const API_ROUTES = {
   register: `${BASE_URL}/auth/register`,

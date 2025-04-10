@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 
 function App() {
   let [user, setUser] = useState(null)
+
+  
   useEffect(() => {
     (async() => {
       try {
@@ -24,11 +26,13 @@ function App() {
     })()
   },[])
 
+
+
   return (
-    ( <Router>
-      <div className=" bg-gray-100 text-gray-900 main h-screen">
+    ( user === null ? "Loading" : user === "Error" ? <p>Error logging in </p> : <Router>
+      <div className=" bg-gray-100 text-gray-900 main h-screen overflow-hidden">
         <Navbar />
-        <div className="container mx-auto p-4">
+        <div className="w-screen mx-auto p-4 h-screen ">
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/register" element={<Register />} />
