@@ -9,6 +9,9 @@ let backend_caller = axios.create({
 export async function getUser() {
     try {
         let res = await backend_caller.get("/auth/profile");
+        if(res.data.data.message === "Not authenticated") {
+            return false
+        }
         let user = res.data.data.user
         return user
     } catch (error) {
