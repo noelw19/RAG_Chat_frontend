@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { getUser } from "@/utils/axios";
+import { getUser } from "../utils/axios";
 import { useEffect, useState } from "react";
 
 const Landing = () => {
