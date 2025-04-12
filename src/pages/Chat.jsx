@@ -101,6 +101,7 @@ const Chat = () => {
             <div className="w-1/4 h-fit bg-white border-r border-gray-200 p-4">
                 <h2 className="text-xl font-semibold mb-4">Message Threads</h2>
                 <div className="space-y-2">
+                    {threads.length == 0 ? <p className="text-gray-500 text-sm italic">No chats yet</p> : null}
                     {threads.map((thread, index) => {
                             console.log(selectedThread, index);
                         return (

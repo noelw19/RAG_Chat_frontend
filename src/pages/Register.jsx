@@ -13,7 +13,8 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post(API_ROUTES.register, form);
-      // window.location.href = "/login";
+      alert("Success");
+      window.location.href = "/login";
     } catch (error) {
       alert("Error registering: "+error);
     }
