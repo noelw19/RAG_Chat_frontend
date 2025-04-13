@@ -15,8 +15,13 @@ export async function getUser() {
         let user = res.data.data.user
         return user
     } catch (error) {
-        console.log("Error in getUser: ", error)
-        throw error
+        if(error.status == 401) {
+            throw error
+            
+        } else {
+
+            console.log("Error in getUser: ", error)
+        }
     }
 }
 

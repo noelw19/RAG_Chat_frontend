@@ -9,9 +9,16 @@ const Landing = () => {
 
     async function getUserData() {
         // get user messages and validate logged in
-        let user = await getUser();
-        if(user) {
-          setLoggedIn(true)
+        try {
+          
+          let user = await getUser();
+          console.log("user: ", user)
+          if(user) {
+            setLoggedIn(true)
+          }
+        // eslint-disable-next-line no-unused-vars
+        } catch (err) {
+          console.log("No logged in mate")
         }
     }
 
@@ -33,7 +40,7 @@ const Landing = () => {
           <Link to="/register" className="px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
             Get Started
           </Link>
-          {isLoggedIn ? <Link to="/login" className="px-6 py-2 text-blue-600 border border-blue-600 rounded-md hover:bg-blue-100">
+          {!isLoggedIn ? <Link to="/login" className="px-6 py-2 text-blue-600 border border-blue-600 rounded-md hover:bg-blue-100">
             Login
           </Link> : null}
         </div>
