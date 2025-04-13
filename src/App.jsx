@@ -29,7 +29,7 @@ function App() {
 
 
   return (
-    ( user === null ? "Loading" : user === "Error" ? <p>Error logging in </p> : <Router>
+    ( user === null ? "Loading" : user === "ERROR" ? <p>Error logging in </p> : <Router>
       <div className=" bg-gray-100 text-gray-900 main h-screen overflow-hidden">
         <Navbar />
         <div className="w-screen mx-auto p-4 h-screen ">

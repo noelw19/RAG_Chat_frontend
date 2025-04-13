@@ -177,57 +177,6 @@ const Documents = () => {
         </form>
       </div>
     </div>
-
-
-//   return (
-//     <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
-//       <h2 className="text-2xl font-semibold mb-4">Upload Document</h2>
-
-//       {/* Title Input */}
-//       <input
-//         type="text"
-//         placeholder="Title"
-//         value={title}
-//         onChange={(e) => setTitle(e.target.value)}
-//         className="w-full p-2 border border-gray-300 rounded-md mb-3 text-white"
-//         required
-//       />
-
-//       {/* Description Input */}
-//       <textarea
-//         placeholder="Description"
-//         value={description}
-//         onChange={(e) => setDescription(e.target.value)}
-//         className="w-full p-2 border border-gray-300 rounded-md mb-3 text-white"
-//         required
-//       />
-
-//       {/* File Input */}
-//       <label className="relative cursor-pointer px-4 py-2 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700 transition block text-center">
-//         Select File
-//         <input 
-//           type="file" 
-//           accept=".txt, .pdf, .docx, .doc" 
-//           onChange={handleFileChange} 
-//           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer text-white"
-//         />
-//       </label>
-
-//       {/* Display Selected File Name */}
-//       {selectedFile && <p className="text-gray-600 mt-2">Selected: {selectedFile.name}</p>}
-
-//       {/* Submit Button */}
-//       <button 
-//         type="submit"
-//         className="w-full mt-4 bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
-//         disabled={loading}
-//       >
-//         {loading ? "Uploading..." : "Submit"}
-//       </button>
-
-//       {/* Status Message */}
-//       {message && <p className="mt-3 text-center text-sm font-medium">{message}</p>}
-//     </form>
   );
 };
 

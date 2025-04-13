@@ -37,9 +37,12 @@ const Landing = () => {
         </p>
 
         <div className="mt-6 space-x-4">
-          <Link to="/register" className="px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
-            Get Started
-          </Link>
+          
+          {!isLoggedIn ? <Link to="/register" className="px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
+            Register
+          </Link> : <Link to="/documents" className="px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
+            Upload document
+          </Link>}
           {!isLoggedIn ? <Link to="/login" className="px-6 py-2 text-blue-600 border border-blue-600 rounded-md hover:bg-blue-100">
             Login
           </Link> : null}
